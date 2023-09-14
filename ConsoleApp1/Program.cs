@@ -10,7 +10,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            string confirm = "yes";
+            /*string confirm = "yes";
             int contador = 0,number=0;
             Console.Clear();
             Console.WriteLine("Digite el número que será multiplo: ");
@@ -36,7 +36,40 @@ namespace ConsoleApp1
                 confirm = Console.ReadLine();
                 contador++;
 
-            }while(confirm=="yes");
+            }while(confirm=="yes");*/
+
+
+            Class1 operaciones = new Class1();
+            double x, y;
+            string bandera = "yes";
+
+            do
+            {
+
+
+                Console.WriteLine("Digitar un número");
+                x = double.Parse(Console.ReadLine());
+                Console.WriteLine("Digitar otro número");
+                y = double.Parse(Console.ReadLine());
+                operaciones.suma(x, y);
+                operaciones.multiplicacion(x, y);
+                operaciones.resta(x, y);
+                while (y == 0) 
+                   
+                {
+                    operaciones.division(x, y);
+                    Console.WriteLine("Digitar otra vez el denomidador");
+                    y = double.Parse(Console.ReadLine());
+
+                } ;                                                                                                      
+                operaciones.division(x, y);
+                Console.WriteLine("Quieres realizar las operaciones con otros números? yes/no");
+                bandera = Console.ReadLine();
+
+
+            } while (bandera == "yes");
+
+           
         }
     }
 }
